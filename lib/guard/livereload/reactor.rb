@@ -45,8 +45,8 @@ module Guard
       end
 
       def _start_reactor
-        EventMachine.epoll  if EventMachine.epoll?
-        EventMachine.kqueue if EventMachine.kqueue?
+        EventMachine.epoll  if EventMachine.epoll
+        EventMachine.kqueue if EventMachine.kqueue
         EventMachine.run do
           EventMachine.start_server(
             options[:host],
